@@ -1,0 +1,6 @@
+{
+  "patterns": ["./**/*.(ts|js|json|tsx|jsx|vue|html)", "!**/node_modules/**", "!git/**"],
+  "gitignore": true,
+  "ignoreTexts": ["简体中文", "简中"],
+  "ignoreComments": true
+}

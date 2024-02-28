@@ -1,0 +1,40 @@
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
+
+Vue.use(VueI18n);
+
+const locale =
+  localStorage.getItem('serviceLanguage') || process.env.VUE_APP_I18N_LOCALE || 'zh-Hant';
+
+function loadLocaleMessages() {
+  const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.js$/i);
+  const messages = {};
+  locales.keys().forEach((key) => {
+    const matched = key.match(/([A-Za-z0-9-_]+)\./i);
+    if (matched && matched.length > 1) {
+      const locale = matched[1];
+      messages[locale] = locales(key).default;
+    }
+  });
+  return messages;
+}
+const i18n = new VueI18n({
+  locale,
+  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'zh-Hant',
+  messages: loadLocaleMessages(),
+});
+
+export default i18n;
+
+export function getAcceptLanguage(locale) {
+  switch (locale) {
+    case 'zh-Hant':
+      return 'zh';
+    case 'pt':
+      return 'pt';
+    case 'en':
+      return 'en';
+    default:
+      return 'zh';
+  }
+}

@@ -1,0 +1,772 @@
+{
+  "ERROR_CODE_MESSAGE": {
+    "Unauthorized": "Please login first",
+    "Not Found": "Request Error",
+    "Internal Server Error": "Service Error",
+    "VOUCHER_TARGET_IS_NOT_INTERMEDIARY": "Voucher recipient not intermediary",
+    "VOUCHER_AMOUNT_FORMAT_ERROR": "Invalid amount format",
+    "VOUCHER_NEEDS_TO_STATEMENT": "Declaration required",
+    "DEADLINE_MUST_BE_GREATER_THAN_TODAY": "Incorrect payment deadline",
+    "VOUCHER_DOES_NOT_REQUIRE_PAYMENT": "No payment needed",
+    "VOUCHER_REFUND_AMOUNT_CANNOT_GREATER_THAN_COLLECT_AMOUNT": "Refund exceeds payment",
+    "VOUCHER_HAS_BEEN_REFUNDED": "Voucher already refunded",
+    "VOUCHER_BATCH_REFUND_AMOUNT_INCORRECT": "Invalid batch voucher refund amount",
+    "LICENSE_STILL_HAS_PRINT_TIMES": "License still has printing quota",
+    "VOUCHER_REFUND_AMOUNT_CANNOT_GREATER_THAN_VOUCHER_AMOUNT": "Refund exceeds voucher amount",
+    "DATA_INTEGRITY_VIOLATION": "Data Abnormality",
+    "LICENSE_NOT_FOUND": "License Not Found",
+    "LICENSE_HAS_NO_PRINT_TIMES": "Printing Quota: 0",
+    "RECEIPT_TEMPLATE_NOT_FOUND": "Receipt template not found",
+    "ACCESS_DENIED": "Unauthorized Access",
+    "NOTICE_TRIGGER_TYPE_MISMATCH": "Trigger Node Error",
+    "NOTICE_SCHEDULED_TIME_MUST_10_MINUTES_GREATER_THAN_CURRENT_TIME": "Notification schedule send time should be at least 10 minutes or more from the current time.\n",
+    "PARAMETER_NOT_VALID": "Payment information is incomplete.",
+    "ENTITY_IN_USE": "Data in use, unable to delete.",
+    "RECEIPT_PRINT_ERROR": "Receipt printing failed",
+    "TRANSACTION_IS_NOT_PAID_ONLINE": "Payment for selected voucher is offline",
+    "TRANSACTION_NOT_FOUND": "Transaction not found"
+  },
+  "Common": {
+    "title": {
+      "tip": "Friendly reminder",
+      "error": "Error"
+    },
+    "label": {
+      "version": "Version",
+      "plsLogin": "Please login first",
+      "plsInput": "Please enter",
+      "plsSelect": "Please select",
+      "recordTotal": "Total {0} records",
+      "showTotal": "{0}/page",
+      "nowPage": "Page {0}",
+      "Total": "Total {0} pages",
+      "jumpPage1": "Go to",
+      "jumpPage2": " ",
+      "noData": "No data available",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "message": {
+      "loginSuccess": "Logged In",
+      "loginFail": "Re-login required.",
+      "logoutSuccess": "Logged Out",
+      "plsAccount": "Please enter your account",
+      "plsPassword": "Please enter your password",
+      "submitConfirm": "Confirm submit?",
+      "submitSuccess": "Submitted",
+      "editConfirm": "Confirm edit?",
+      "editSuccess": "Edited",
+      "deleteConfirm": "Confirm delete?",
+      "deleteConfirmMulti": "Confirm delete selected records?",
+      "deleteSuccess": "Deleted",
+      "changeSuccess": "Updated",
+      "addSuccess": "Created",
+      "operationSuccess": "Success",
+      "operationFail": "Failed",
+      "downloadFile": "Just a moment, we're getting your resources ready.",
+      "noTip": "Don't show again",
+      "notlogin": "Not logged in",
+      "saveSuccess": "Saved",
+      "importSuccess": "Imported",
+      "unlockConfirm": "Confirm unlock?",
+      "unlockSuccess": "Unlocked."
+    },
+    "action": {
+      "retry": "Retry",
+      "relogin": "Re-login",
+      "login": "Login",
+      "logout": "Logout",
+      "back": "Return",
+      "continue": "Continue",
+      "submit": "Submit",
+      "submit2": "Submit",
+      "submitted": "Submitted",
+      "confirm": "Confirm",
+      "reject": "Reject",
+      "over": "Completed",
+      "next": "Next",
+      "last": "Previous",
+      "edit": "Edit",
+      "delete": "Delete",
+      "added": "Create",
+      "close": "Close",
+      "backIndex": "Return to Home",
+      "update": "Update",
+      "import": "Import",
+      "export": "Export",
+      "print": "Print",
+      "reset": "Reset",
+      "search": "Search",
+      "hidden": "Collapse",
+      "show": "Expand",
+      "cancel": "Cancel",
+      "save": "Save",
+      "download": "Download",
+      "unlock": "Unlock",
+      "all": "All"
+    },
+    "enum": {
+      "status1": "Valid",
+      "status2": "Invalid",
+      "trueFalse1": "On",
+      "trueFalse2": "Off",
+      "voucherStatus1": "Pending Approval",
+      "voucherStatus2": "To be followed up",
+      "voucherStatus3": "Pending Payment",
+      "voucherStatus4": "Paid",
+      "voucherStatus5": "Processed",
+      "voucherStatus6": "Expired",
+      "voucherStatus7": "Invalid",
+      "voucherStatus8": "Rejected",
+      "statementStatus1": "Declaration Completed",
+      "statementStatus2": "Declaration Pending",
+      "statementStatus3": "Declaration Not Required",
+      "transactionRefunds1": "Payment",
+      "transactionRefunds2": "Refund",
+      "channels1": "Online",
+      "channels2": "Offline",
+      "logStatusList1": "Success",
+      "logStatusList2": "Failed",
+      "logStatusList3": "Pending Confirmation",
+      "logActions1": "API Voucher Creation",
+      "logActions2": "API Voucher Update",
+      "logActions3": "Create Voucher",
+      "logActions4": "Edit Voucher",
+      "logActions5": "Delete Voucher",
+      "logActions6": "Intermediary Declaration",
+      "logActions7": "Internal Attachment - Create",
+      "logActions8": "Internal Attachment - Delete",
+      "logActions9": "User Attachment - Create",
+      "logActions10": "User Attachment - Delete",
+      "licenselogActions1": "Created by IIMS",
+      "licenselogActions2": "Updated by IIMS",
+      "licenselogActions3": "Add printing quota",
+      "transactionLogActions1": "Create Transaction Log",
+      "transactionLogActions2": "Edit Transaction Log",
+      "payerTypes1": "Self",
+      "payerTypes2": "Authorized",
+      "payerTypes3": "Other",
+      "licenseTypes1": "Life Insurance",
+      "licenseTypes2": "Pension fund",
+      "licenseTypes3": "General Insurance",
+      "licenseTypes4": "Investment linked",
+      "licenseStatuses1": "Valid",
+      "licenseStatuses2": "Pending",
+      "licenseStatuses3": "Suspended",
+      "licenseStatuses4": "Cancelled",
+      "licenseStatuses5": "Invalid",
+      "subjects1": "Legal Entity",
+      "subjects2": "Natural Person",
+      "voucherSources1": "PMS-created",
+      "noticeTriggerPointTypes1": "License",
+      "noticeTriggerPointTypes2": "Printing Quota",
+      "noticeTriggerPointTypes3": "Voucher",
+      "LNTP1": "Valid -> Invalid",
+      "LNTP2": "Valid -> Suspended",
+      "LNTP3": "Valid -> Cancelled",
+      "LNTP4": "Invalid -> Valid",
+      "LNTP5": "Invalid -> Suspended",
+      "LNTP6": "Invalid -> Cancelled",
+      "LNTP7": "Pending -> Valid",
+      "LNTP8": "Pending -> Cancelled",
+      "LNTP9": "Suspended -> Valid",
+      "LNTP10": "Suspended -> Suspended (2nd month up to 6 months)",
+      "LNTP11": "Suspended -> Invalid",
+      "LNTP12": "Suspended -> Cancelled",
+      "LNTP13": "Manual",
+      "LPNTP1": "Pending Confirmation -> Valid",
+      "VNTP1": "None -> Pending Payment",
+      "VNTP2": "None -> To be followed up",
+      "VNTP11": "None -> Pending Confirmation",
+      "VNTP3": "To be followed up -> Pending Payment",
+      "VNTP4": "To be followed up -> Invalid",
+      "VNTP5": "To be followed up -> Expired",
+      "VNTP6": "Pending Payment -> Processed",
+      "VNTP7": "Pending Payment -> Invalid",
+      "VNTP8": "Pending Payment -> Expired",
+      "VNTP9": "Paid -> Processed",
+      "VNTP10": "X days before the payment deadline",
+      "VNTP12": "Pending Confirmation -> Pending Payment",
+      "VNTP13": "Pending Payment -> Paid",
+      "VNTP14": "None -> Processed",
+      "VNTP15": "Pending Confirmation -> To be followed up",
+      "VNTP16": "To be followed up -> Processed",
+      "noticeChannels1": "SMS",
+      "noticeChannels2": "Email",
+      "noticeChannels3": "MOA",
+      "noticeChannels4": "Internal",
+      "noticeStatuses1": "Draft",
+      "noticeStatuses2": "Submitted",
+      "noticeStatuses3": "Confirmed",
+      "noticeStatuses4": "Rejected",
+      "noticeStatuses5": "Canceled",
+      "noticeStatuses6": "Success",
+      "noticeStatuses7": "Failed",
+      "clients1": "Frontend",
+      "clients2": "Backend",
+      "clients3": "Sync",
+      "userTypes1": "普通用戶pt",
+      "userTypes2": "普通用戶pt",
+      "LNTP14": "None -> Pending",
+      "LNTP15": "None -> Valid",
+      "LNTP16": "None -> Invalid",
+      "LNTP17": "None -> Suspended",
+      "LNTP18": "None -> Cancelled",
+      "LNTP19": "Pending -> Suspended",
+      "LNTP20": "Pending -> Invalid"
+    }
+  },
+  "Global": {
+    "title": {
+      "logConfirm": "Confirmation of update logs",
+      "welcome": "Welcome to the AMCM Payment Management System",
+      "server": "AMCM Payment Management System",
+      "homeTab1": "Voucher Revision Confirmation",
+      "homeTab2": "Transaction Confirmation",
+      "homeTab3": "License Confirmation",
+      "homeTab4": "Notification Confirmation",
+      "homeTab5": "New Voucher Confirmation"
+    },
+    "label": {
+      "index": "Index",
+      "code": "Code",
+      "tc": " (Chinese)",
+      "pt": " (Portuguese)",
+      "en": " (English)",
+      "foreign": " (Foreign)",
+      "old": " (Original)",
+      "new": " (Modified)",
+      "modifiedBy": "Operator",
+      "modifiedTime": "Last Modified Time",
+      "approver": "Approver",
+      "actionStatus": "Operational Status",
+      "status": "Status",
+      "actions": "Operation",
+      "inside": "Internal Attachment",
+      "outside": "Recipient Attachment",
+      "remark": "Operational Note",
+      "account": "Account",
+      "password": "Password",
+      "createdFileTime": "Upload Time",
+      "fileName": "File Name",
+      "file": "File",
+      "date": "Date",
+      "export": "Please select the format for export",
+      "day": "Day(s)",
+      "licenseStatus": "License Status",
+      "permitStatus": "Authorization Status"
+    },
+    "message": {
+      "chooseConfirm": "Confirm selection?",
+      "acceptConfirm": "Approve selected record?",
+      "rejectConfirm": "Reject selected record?",
+      "noticeConfirm": "Confirm resend?",
+      "statementConfirm": "Confirm declaration?",
+      "paySuccess": "Paid",
+      "refundSuccess": "Refunded",
+      "confirmSuccess": "Confirmed",
+      "rejectSuccess": "Rejected",
+      "statementSuccess": "Declared",
+      "copySuccess": "Copy successful"
+    },
+    "action": {
+      "accept": "Approve",
+      "reject": "Reject",
+      "importDownload": "Download Template",
+      "importChoose": "Select",
+      "copy": "Copy"
+    }
+  },
+  "Nav": {
+    "title": {
+      "index": "Home",
+      "voucher": "Voucher",
+      "voucherList": "Voucher List",
+      "voucherDetail": "Voucher Details",
+      "transactions": "Transaction Records",
+      "transactionDetail": "Transaction Details",
+      "intermediary": "Intermediary",
+      "intermediaries": "Intermediary List",
+      "intermediaryDetail": "Intermediary Details",
+      "licenses": "License List",
+      "licenseDeatil": "License Details",
+      "basic": "System Configuration",
+      "role": "Roles",
+      "user": "Users",
+      "department": "Groups",
+      "voucherType": "Voucher Type",
+      "currency": "Currency Type",
+      "identityType": "ID Type",
+      "transactionWay": "Transaction Method",
+      "cancelReason": "License Cancellation Reason",
+      "suspendReason": "License Suspension Reason",
+      "employer": "Employer Info",
+      "holiday": "Holiday",
+      "licenseCategory": "License Type",
+      "statistical": "Reports",
+      "business": "Business Reports",
+      "finance": "Financial Reports",
+      "technology": "Technical Reports",
+      "notice": "Notification",
+      "template": "Notification Templates",
+      "templateDetail": "Template Details",
+      "noticeRecord": "Notification Records",
+      "operationLog": "System Logs"
+    }
+  },
+  "FormRule": {
+    "message": {
+      "required": "This field is required",
+      "requiredFile": "Please select file to upload",
+      "requiredCheckbox": "This field is required",
+      "maxLength": "Max length limit {0} characters",
+      "amountCheck": "Please enter correct amount",
+      "amountMax": "Max amount cannot exceed 999999999",
+      "email": "Please enter a valid email",
+      "eightNumber": "Please enter 8-digit Macau phone No.",
+      "password": "Password must be at least eight characters and contain lowercase letters, uppercase letters, and numbers.",
+      "minMaxNumber": "Requires a number between {0} and {1}.",
+      "isMust": "Friendly reminder: The {0} field cannot be left blank."
+    }
+  },
+  "User": {
+    "label": {
+      "name": "User Name",
+      "type": "User Type",
+      "department": "Department",
+      "role": "Assigned Roles",
+      "oldPassword": "Current Password",
+      "newPassword": "New Password",
+      "passwordConfirm": "Re-enter Password",
+      "changeForce": "Would you like to change your password now?",
+      "description": "Description"
+    },
+    "message": {
+      "passwordError": "The two entered passwords do not match.",
+      "passwordSuccess": "Your password has been successfully updated.",
+      "passwordFail": "Password update failed."
+    },
+    "action": {
+      "changePassword": "Change Password"
+    }
+  },
+  "Role": {
+    "label": {
+      "name": "Role Name",
+      "permission": "Assigned Permissions"
+    },
+    "action": {
+      "chooseAll": "Select All"
+    }
+  },
+  "CancelReason": {
+    "label": {
+      "name": "Cancellation Reason Description"
+    }
+  },
+  "SuspendReason": {
+    "label": {
+      "name": "Suspension Reason Description"
+    }
+  },
+  "Currency": {
+    "label": {
+      "name": "Currency Type Description"
+    }
+  },
+  "Department": {
+    "label": {
+      "name": "Department Description",
+      "email": "Email Address"
+    }
+  },
+  "Employer": {
+    "label": {
+      "name": "Employer Info Description"
+    }
+  },
+  "Holiday": {
+    "label": {
+      "name": "Holiday Name"
+    }
+  },
+  "IdentityType": {
+    "label": {
+      "name": "ID Type Description",
+      "govappMapping": "Corresponding MOA Identity Type",
+      "govappIssuePlace": "Corresponding MOA identityIssuePlace",
+      "subject": "Entity Type"
+    }
+  },
+  "LicenseCategory": {
+    "label": {
+      "name": "License Type Description",
+      "printTimes": "Default printing quota",
+      "file": "Template"
+    }
+  },
+  "TransactionWay": {
+    "label": {
+      "name": "Transaction Method Description",
+      "deviceNo": "Device No.",
+      "commission": "Transaction fee rate",
+      "payChannelId": "Corresponding GovPay ID",
+      "prefix": "Receipt Prefix",
+      "onlinePay": "Online Payment?"
+    }
+  },
+  "VoucherType": {
+    "label": {
+      "name": "Voucher Type Description",
+      "department": "Follow-up Department",
+      "statement": "Declaration Content",
+      "requireStatement": "Declaration Toggle",
+      "singleTemplateC": "Single Payment Receipt",
+      "singleTemplateR": "Single Refund Receipt",
+      "multipleTemplateC": "Batch Payment Receipt",
+      "multipleTemplateR": "Batch Refund Receipt",
+      "templateC": "Payment Receipt",
+      "templateR": "Refund Receipt",
+      "printLicense": "Receipt includes license?"
+    }
+  },
+  "Voucher": {
+    "title": {
+      "basicTab": "Voucher Info",
+      "noticeTab": "Notification Records",
+      "logTab": "Modified Records",
+      "voucherConfirm": "Confirmation of Voucher"
+    },
+    "label": {
+      "no": "Voucher ID",
+      "no2": "Voucher ID",
+      "title": "Voucher Title",
+      "amount": "Voucher Amount",
+      "amount2": "Amount",
+      "residentName": "Name",
+      "identityNo": "ID No.",
+      "receipt": "Receipt No.",
+      "licenseNo": "License No.",
+      "employer": "Employer Info",
+      "identificationCode": "Payment/Refund ID",
+      "currency": "Voucher Currency",
+      "deadline": "Payment Deadline",
+      "content": "Voucher summary",
+      "annotation": "Remarks",
+      "intermediary": "Is Recipient an Intermediary?",
+      "intermediary2": "Associated Intermediary",
+      "mobile": "Phone No.",
+      "email": "Email",
+      "pays": "Payment Records",
+      "refunds": "Refund Records",
+      "channel": "Transaction Channel",
+      "category": "Associated License Category",
+      "licenseNo2": "Associated License No.",
+      "receiptNo": "Document No.",
+      "checkbox": "Confirmation of payment and all required documents are collected.",
+      "transaction": "Transaction Info",
+      "example": "E.g.",
+      "payerType1": "Payer",
+      "payerType2": "Refundee",
+      "voucher": "Voucher",
+      "payerType": "Payer",
+      "intermediary3": "Recipient Info",
+      "supplement": "Additional Info",
+      "source": "Data Source",
+      "statementStatus": "Statement Status",
+      "create": "Creator",
+      "printLicense": "Printing for offline payment"
+    },
+    "message": {
+      "noIntermediary": "No matching intermediary found",
+      "allowPrint": "Licenses must be valid before printing",
+      "allow1": "Pending payment vouchers only",
+      "allow2": "Paid offline vouchers only",
+      "noSame1": "Single currency per transaction only",
+      "noSame2": "Refunds must be made in a single currency at a time",
+      "accept": "Confirmation Successful: Approved",
+      "reject": "Confirmation Successful: Rejected",
+      "plsIdentityNo": "Please enter ID No.",
+      "noIdentityNo": "No intermediary found",
+      "totalRefund": "Full refund has been processed",
+      "printLicense": "Would you like to print the associated license?"
+    },
+    "action": {
+      "accept": "Approve",
+      "reject": "Reject",
+      "search": "Search",
+      "send": "Notify",
+      "pay": "Pay",
+      "refund": "Refund",
+      "refundOffline": "Offline Refund"
+    }
+  },
+  "Intermediary": {
+    "label": {
+      "license": "License",
+      "intermediaryNo": "Intermediary No.",
+      "name": "Name",
+      "firstIssueDate": "First issue date",
+      "startDate": "Authorization Date",
+      "endDate": "Validity",
+      "printTimes": "Printing Quota",
+      "paymentTime": "Payment Time",
+      "refundTime": "Refund Time",
+      "paymentAmount": "Payment Amount",
+      "refundAmount": "Refund Amount",
+      "permit": "Authorization Info",
+      "print": "Priting Records",
+      "voucher": "Associated Vouchers",
+      "license2": "Associated Licenses",
+      "createdTime": "Issue date",
+      "type": "Authorization Type",
+      "printReason": "Printing Reason",
+      "printTime": "Printing Time",
+      "pickUpType": "Recipient",
+      "pickUpTypes1": "Self",
+      "pickUpTypes2": "Authorized",
+      "file": "Attachment",
+      "representativeIdentityTypeId": "Authorizee ID Type",
+      "representativeIdentityNo": "Authorizee ID No.",
+      "authorized": "Confirmation of all required documents are collected."
+    },
+    "message": {
+      "addTimesConfirm": "Confirm addition of printing quota?",
+      "addSuccess": "Printing quota added successfully"
+    }
+  },
+  "Notice": {
+    "title": {
+      "set": "Template Configuration"
+    },
+    "label": {
+      "type": "Trigger Type",
+      "point": "Trigger Node",
+      "status": "Notification Status",
+      "voucherTypeId": "Associated Voucher Type",
+      "title": "Title",
+      "content": "Content",
+      "quickInput": "Parameter",
+      "rule": "Rule",
+      "notice": "Notification",
+      "scheduledTime": "Sending Time",
+      "scheduledDate": "Sending Date",
+      "createdDate": "Creation Date",
+      "association": "Associated Voucher/License",
+      "planTime": "Scheduled Send Time",
+      "channel": "Notification Channel",
+      "template": "Default Template",
+      "sendingRule1": "Send Now",
+      "sendingRule2": "Send After Confirmation",
+      "sendingRule3": "Next Business Day",
+      "sendingRule4": "Recipient",
+      "sendingRule5": "Before Voucher Payment Deadline",
+      "suspensionDate": "Suspension Date",
+      "cancellationDate": "Cancellation Date",
+      "suspensionEndDate": "Suspension End Date"
+    },
+    "message": {
+      "plsTitle": "Please enter title",
+      "plsEmail": "Please enter recipient email addresses, separate with ;",
+      "plsRule": "Please check rule",
+      "resendNotice": "Submitted",
+      "editNotice": "Submitted",
+      "sendNotice": "Submitted",
+      "cancelNotice": "Cancel notification schedule?",
+      "cancelSuccess": "Schedule Canceled",
+      "acceptNotice": "Confirm notification schedule?",
+      "rejectNotice": "Reject notification schedule?",
+      "confirmSuccess": "Notification schedule confirmed",
+      "plsDay": "Please check the time entered",
+      "plsTime": "Please check the date and time entered"
+    },
+    "action": {
+      "resend": "Resend"
+    }
+  },
+  "Statistical": {
+    "title": {
+      "VLS": "Voucher and License Status Report",
+      "OP": "Overdue Unpaid Report",
+      "NPR": "Notifications Requiring Confirmation Report",
+      "FPR": "Confirmed Notifications Report",
+      "SN": "Sent Notifications Report",
+      "UPP": "Payment Deadline Update Report",
+      "ALS": "License Status Anomaly Report",
+      "INH": "Intermediary Notification History Report",
+      "NTL": "Notification Template Report",
+      "VOR": "Voucher New/Revised/Approved Report",
+      "IS": "Intermediaries in Suspension (Including First and Second Stages) and Related Notification Report",
+      "EOS": "Completion of Suspension Period (Nine Months from Subsequent Month of Renewal Month) Intermediaries Report",
+      "LOR": "License Printing Report",
+      "ILSCR": "Intermediary License Status Change Report",
+      "ILSR": "Intermediary License Statistics Report",
+      "VSCR": "Voucher Status Change Report",
+      "VSR": "Voucher Statistics Report",
+      "NSR": "Notification Statistics Report",
+      "reconciliation": "Reconciliation Statement Report",
+      "listOfTransactions": "Transaction Details Report",
+      "transactionFeeCalculation": "Fee Settlement Report",
+      "paymentStatisticDaily": "Payment Date Statistics Report",
+      "paymentStatisticMonthly": "Payment Month Statistics Report",
+      "VSS": "Voucher Status Statistics Report",
+      "notice": "Notification Report",
+      "auditLog": "System Log Report"
+    },
+    "label": {
+      "paymentTime": "Transaction Time",
+      "month": "Month",
+      "year": "Year",
+      "startYear": "(Start Year)",
+      "endYear": "(End Year)",
+      "paymentRefund": "Payment/Refund",
+      "startNo": "Start Voucher ID",
+      "endNo": "End Voucher ID",
+      "endDateInMonth": "Month of Valid End Date",
+      "voucherMonth": "Voucher Month"
+    },
+    "message": {
+      "startEnd": "The start time must be earlier than the end time."
+    }
+  },
+  "Operation": {
+    "label": {
+      "operationTime": "Operation Time",
+      "operator": "Operator",
+      "ip": "Request IP",
+      "success": "Request Result",
+      "module": "Function Module",
+      "description": "Function Description",
+      "client": "Client Type"
+    }
+  },
+  "Editor": {
+    "editor": {
+      "more": "More",
+      "justify": "Justify",
+      "indent": "Indent",
+      "image": "Image",
+      "video": "Video"
+    },
+    "common": {
+      "ok": "OK",
+      "delete": "Delete",
+      "enter": "Enter"
+    },
+    "blockQuote": {
+      "title": "Quote"
+    },
+    "codeBlock": {
+      "title": "Code block"
+    },
+    "color": {
+      "color": "Font color",
+      "bgColor": "Back color",
+      "default": "Default color",
+      "clear": "Clear back color"
+    },
+    "divider": {
+      "title": "Divider"
+    },
+    "emotion": {
+      "title": "Emotion"
+    },
+    "fontSize": {
+      "title": "Font size",
+      "default": "Default"
+    },
+    "fontFamily": {
+      "title": "Font family",
+      "default": "Default"
+    },
+    "fullScreen": {
+      "title": "Full screen"
+    },
+    "header": {
+      "title": "Header",
+      "text": "Text"
+    },
+    "image": {
+      "netImage": "Net image",
+      "delete": "Delete image",
+      "edit": "Edit image",
+      "viewLink": "View link",
+      "src": "Image src",
+      "desc": "Description",
+      "link": "Image link"
+    },
+    "indent": {
+      "decrease": "Decrease",
+      "increase": "Increase"
+    },
+    "justify": {
+      "left": "Left",
+      "right": "Right",
+      "center": "Center",
+      "justify": "Justify"
+    },
+    "lineHeight": {
+      "title": "Line height",
+      "default": "Default"
+    },
+    "link": {
+      "insert": "Insert link",
+      "text": "Link text",
+      "url": "Link source",
+      "unLink": "Unlink",
+      "edit": "Edit link",
+      "view": "View link"
+    },
+    "textStyle": {
+      "bold": "Bold",
+      "clear": "Clear styles",
+      "code": "Inline code",
+      "italic": "Italic",
+      "sub": "Sub",
+      "sup": "Sup",
+      "through": "Through",
+      "underline": "Underline"
+    },
+    "undo": {
+      "undo": "undo",
+      "redo": "Redo"
+    },
+    "todo": {
+      "todo": "Todo"
+    },
+    "listModule": {
+      "unOrderedList": "Unordered list",
+      "orderedList": "Ordered list"
+    },
+    "tableModule": {
+      "deleteCol": "Delete column",
+      "deleteRow": "Delete row",
+      "deleteTable": "Delete table",
+      "widthAuto": "Width auto",
+      "insertCol": "Insert column",
+      "insertRow": "Insert row",
+      "insertTable": "Insert table",
+      "header": "Header"
+    },
+    "videoModule": {
+      "delete": "Delete",
+      "uploadVideo": "Upload video",
+      "insertVideo": "Insert video",
+      "videoSrc": "Video source",
+      "videoSrcPlaceHolder": "Video file url, or third-party <iframe>",
+      "videoPoster": "Video poster",
+      "videoPosterPlaceHolder": "Poster image url",
+      "ok": "Ok",
+      "editSize": "Edit size",
+      "width": "Width",
+      "height": "Height"
+    },
+    "uploadImgModule": {
+      "uploadImage": "Upload Image",
+      "uploadError": "{{fileName}} upload error"
+    },
+    "highLightModule": {
+      "selectLang": "Language"
+    }
+  }
+}
