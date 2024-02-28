@@ -1,13 +1,13 @@
 <template>
   <v-app :class="[$i18n.locale]" :style="{ '--appBarHeight': `${appBarHeight}px` }">
     <!--  -->
-    <EnvLogo />
+    <!-- <EnvLogo /> -->
     <!--  -->
-    <AppHeader></AppHeader>
+    <!-- <AppHeader></AppHeader> -->
     <!--  -->
-    <v-main>
-      <router-view />
-    </v-main>
+    <!-- <v-main> -->
+    <router-view />
+    <!-- </v-main> -->
     <!--  -->
     <Message />
     <ConfirmDialog />
@@ -20,8 +20,8 @@
 <script>
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import EnvLogo from '@/components/EnvLogo.vue';
-import AppHeader from '@/components/AppHeader.vue';
+// import EnvLogo from '@/components/EnvLogo.vue';
+// import AppHeader from '@/components/AppHeader.vue';
 import Message from '@/components/common/Message.vue';
 import ConfirmDialog from '@/components/common/ConfirmDialog.vue';
 import EdgeDialog from '@/components/common/EdgeDialog.vue';
@@ -29,7 +29,7 @@ import Loading from '@/components/common/Loading.vue';
 
 export default {
   name: 'App',
-  components: { AppHeader, EnvLogo, Message, ConfirmDialog, EdgeDialog, Loading },
+  components: { Message, ConfirmDialog, EdgeDialog, Loading },
   data() {
     return {
       loading: false,
@@ -74,6 +74,6 @@ export default {
   font-family: 'PingFang SC', 'Microsoft YaHei', 'sans-serif';
   background-color: #dbe5f0;
   --appMinWidth: 960px;
-  min-width: var(--appMinWidth);
+  // min-width: var(--appMinWidth);
 }
 </style>

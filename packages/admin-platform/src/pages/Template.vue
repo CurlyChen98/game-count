@@ -1,231 +1,120 @@
 <template>
   <div class="pa-4">
-    <v-btn>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="secondary">{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="primary">{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="accent">{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="error">{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="info">{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="success">{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="warning">{{ $t('Common.action.confirm') }}</v-btn>
-    <br />
-    <v-btn text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="secondary" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="primary" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="accent" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="error" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="info" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="success" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="warning" text>{{ $t('Common.action.confirm') }}</v-btn>
-    <br />
-    <v-btn outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="secondary" outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="primary" outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="accent" outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="error" outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="info" outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="success" outlined>{{ $t('Common.action.confirm') }}</v-btn>
-    <v-btn color="warning" outlined>{{ $t('Common.action.confirm') }}</v-btn>
     <!--  -->
-    <v-card class="tab-card mt-4" style="box-shadow: none">
-      <v-card-title>
-        <div class="text-subtitle-1 font-weight-bold">
-          <span>test</span>
-        </div>
-        <v-spacer />
-      </v-card-title>
-      <v-divider />
-      <div class="py-4 pl-4">
-        <TableFilter notHidden notButton>
-          <TableFilterItem label="all" allCol="6">
-            <cover-date
-              v-model="formTest.a1"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-            />
-          </TableFilterItem>
-          <TableFilterItem label="all" allCol="6">
-            <cover-date
-              v-model="formTest.a2"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-            />
-          </TableFilterItem>
-          <TableFilterItem label="onlyDate" allCol="6">
-            <cover-date
-              v-model="formTest.b1"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-              onlyDate
-            />
-          </TableFilterItem>
-          <TableFilterItem label="onlyDate" allCol="6">
-            <cover-date
-              v-model="formTest.b2"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-              onlyDate
-            />
-          </TableFilterItem>
-          <TableFilterItem label="onlyTime" allCol="6">
-            <cover-date
-              v-model="formTest.c1"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-              onlyTime
-            />
-          </TableFilterItem>
-          <TableFilterItem label="onlyTime" allCol="6">
-            <cover-date
-              v-model="formTest.c2"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-              onlyTime
-            />
-          </TableFilterItem>
-          <TableFilterItem label="onlyMonth" allCol="6">
-            <cover-date
-              v-model="formTest.e1"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-              onlyMonth
-            />
-          </TableFilterItem>
-          <TableFilterItem label="onlyMonth" allCol="6">
-            <cover-date
-              v-model="formTest.e2"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-              onlyMonth
-            />
-          </TableFilterItem>
-          <TableFilterItem label="range-onlyMonth" allCol="6">
-            <cover-date-range
-              v-model="formTest.d1"
-              :placeholder="$t('Common.label.plsSelect')"
-              onlyMonth
-              hide-details
-            />
-          </TableFilterItem>
-          <TableFilterItem label="range" allCol="6">
-            <cover-date-range
-              v-model="formTest.d2"
-              :placeholder="$t('Common.label.plsSelect')"
-              hide-details
-            />
-          </TableFilterItem>
-        </TableFilter>
-      </div>
-    </v-card>
+    <draggable v-model="users" class="group" group="users" @start="drag = true" @end="drag = false">
+      <div v-for="element in users" :key="element.value">{{ element.text }}</div>
+    </draggable>
     <!--  -->
-    <v-card class="tab-card mt-4" style="box-shadow: none">
-      <v-card-title>
-        <div class="text-subtitle-1 font-weight-bold">
-          <span>test</span>
-        </div>
-        <v-spacer />
-      </v-card-title>
-      <v-divider />
-      <div class="py-4 pl-4">
-        <TableFilter notHidden notButton>
-          <TableFilterItem label="all" allCol="6">
-            <ApiSearch
-              v-model="filterOptions.a1"
-              :searchFun="searchBox"
-              hide-details
-              default-search
-            />
-          </TableFilterItem>
-          <TableFilterItem label="all" allCol="6">
-            <ApiSearch
-              v-model="filterOptions.a2"
-              :searchFun="searchBox"
-              hide-details
-              default-search
-              chip
-            />
-          </TableFilterItem>
-          <TableFilterItem label="all" allCol="6">
-            <ApiSearch
-              v-model="filterOptions.a3"
-              :searchFun="searchBox"
-              hide-details
-              default-search
-              multiple
-            />
-          </TableFilterItem>
-          <TableFilterItem label="all" allCol="6">
-            <ApiSearch
-              v-model="filterOptions.a4"
-              :searchFun="searchBox"
-              hide-details
-              default-search
-              chip
-              multiple
-            />
-          </TableFilterItem>
-        </TableFilter>
+    <draggable v-model="wins" class="group" group="users" @start="drag = true" @end="drag = false">
+      <div v-for="element in wins" :key="element.value">{{ element.text }}</div>
+    </draggable>
+    <!-- <div class="users">
+      <div
+        class="user"
+        v-for="(item, index) in users"
+        :key="index"
+        draggable="true"
+        @draggable="dragstart"
+      >
+        {{ item.text }}
       </div>
-    </v-card>
+    </div> -->
+    <!--  -->
+    <!-- <div class="win-box" @dragover="dragover" @drop="drop">
+      <div
+        class="user"
+        v-for="(item, index) in wins"
+        :key="index"
+        draggable="true"
+        @draggable="dragstart"
+      >
+        {{ item.text }}
+      </div>
+    </div> -->
+    <!--  -->
+    <!-- <div class="dogfall-box"></div> -->
     <!--  -->
   </div>
 </template>
 
 <script>
-import { FaxTenderBoxApi } from '@/api/index.js';
-import ApiSearch from '@/components/ApiSearch';
+import draggable from 'vuedraggable';
 
 export default {
-  components: { ApiSearch },
+  components: {
+    draggable,
+  },
   data() {
     return {
-      formTest: {},
-      filterOptions: {},
+      users: [
+        { text: '玩家1', value: 1 },
+        { text: '玩家2', value: 2 },
+        { text: '玩家3', value: 3 },
+        { text: '玩家4', value: 4 },
+        { text: '玩家5', value: 5 },
+        { text: '玩家6', value: 6 },
+        { text: '玩家7', value: 7 },
+        { text: '玩家8', value: 8 },
+        { text: '玩家9', value: 9 },
+      ],
+      wins: [],
+      dragged: null,
     };
   },
-  created() {
-    setTimeout(() => {
-      this.$set(this.formTest, 'a2', '2020-02-02 10:10');
-      this.$set(this.formTest, 'b2', '2020-02-02');
-      this.$set(this.formTest, 'c2', '10:10');
-      this.$set(this.formTest, 'e2', '2020-02');
-    }, 2000);
-
-    setTimeout(() => {
-      this.$set(this.formTest, 'a2', '2023-03-03 13:13');
-      this.$set(this.formTest, 'b2', '2023-03-03');
-      this.$set(this.formTest, 'c2', '13:13');
-      this.$set(this.formTest, 'e2', '2020-08');
-    }, 4000);
+  watch: {
+    users(to) {
+      console.log('🔨[ users ]\n', to);
+    },
+    wins(to) {
+      console.log('🔨[ wins ]\n', to);
+    },
   },
+  created() {},
   methods: {
     //
-    async searchBox(evnet, currentItems) {
-      let find = currentItems.find(
-        (item) => this.filterOptions.tenderBoxId === item.id && evnet === item.text
-      );
-      if (find) return currentItems;
-
-      const { content } = await FaxTenderBoxApi.search({
-        page: 0,
-        size: 50,
-        sort: '',
-        obj: { cstDsc: evnet },
-      });
-      return content.map((item) => {
-        return {
-          ...item,
-          text: item.cstDsc,
-          value: item.id,
-        };
-      });
+    dragstart(event) {
+      this.dragged = event.target;
+    },
+    //
+    dragover(event) {
+      event.preventDefault();
+    },
+    //
+    drop(event) {
+      event.preventDefault();
+      console.log('🔨[ event ]\n', event);
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.v-btn {
-  width: 70px;
+.group {
+  width: 100%;
+  min-height: 100px;
+  background-color: sandybrown;
+  margin-bottom: 16px;
+}
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  .user {
+    padding: 8px;
+    background-color: sandybrown;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+}
+.win-box {
+  margin-top: 16px;
+  width: 100%;
+  height: 300px;
+  border: 2px solid orange;
+}
+.dogfall-box {
+  margin-top: 16px;
+  width: 100%;
+  height: 300px;
+  border: 2px solid orange;
 }
 </style>

@@ -229,7 +229,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if (!['profile'].includes(to.name)) {
+  if (!['profile', 'template'].includes(to.name)) {
     const { profile, cPermissions } = store.state.profile;
 
     // 判斷當前是否有登入
