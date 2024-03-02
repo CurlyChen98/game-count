@@ -4,7 +4,7 @@
     :timeout="snackbarTimeout"
     :color="snackbarColor"
     class="snackbar"
-    top
+    bottom
   >
     {{ snackbarText }}
     <template v-slot:action="{ attrs }">
@@ -25,7 +25,7 @@ export default {
       snackbar: false,
       snackbarColor: null,
       snackbarText: null,
-      snackbarTimeout: 4000,
+      snackbarTimeout: 3000,
     };
   },
   computed: {},
@@ -52,8 +52,6 @@ export default {
       };
 
       Vue.prototype.$error = async (error) => {
-        console.log('🔨[ error ]\n', error);
-        console.log('🔨[ error ]\n', { ...error });
         if (['cancel'].includes(error)) return;
 
         await this.resetSnackbar();
@@ -104,4 +102,8 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.v-snack {
+  padding-bottom: calc(16px * 8);
+}
+</style>

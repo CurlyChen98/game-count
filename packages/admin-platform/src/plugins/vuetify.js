@@ -19,12 +19,7 @@ export default new Vuetify({
       customProperties: true,
       variations: true,
     },
-    themes: {
-      light: {
-        primary: '#41618B',
-        accent: '#5781b9',
-      },
-    },
+    themes: {},
   },
   lang: {
     locales: { zhHant, pt, en },
