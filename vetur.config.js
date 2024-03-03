@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['./packages/admin-platform'],
+  projects: ['./packages/game-count'],
 };
