@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { qsStringify } from '@metaarchit/common-utils/lib/querystring';
-import { getResponseError } from '@metaarchit/common-utils/lib/error';
 
 export default {
   install(
@@ -9,9 +7,6 @@ export default {
   ) {
     axios.defaults.timeout = timeout;
     // axios.defaults.withCredentials = true
-    axios.defaults.paramsSerializer = function (params) {
-      return qsStringify(params);
-    };
 
     axios.interceptors.request.use(
       requestInterceptor
@@ -37,8 +32,6 @@ export default {
           },
       async (error) => {
         beforeError && (await beforeError(error));
-
-        return Promise.reject(await getResponseError(error));
       }
     );
   },
