@@ -89,7 +89,7 @@ export default {
         { text: '添', action: false },
         { text: '朱', action: false },
         { text: '宝', action: false },
-        { text: '郎', action: false },
+        { text: '朗', action: false },
         { text: '卢', action: false },
         { text: '才', action: false },
         { text: '森', action: false },

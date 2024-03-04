@@ -7,11 +7,6 @@ import router from './router';
 import i18n, { getAcceptLanguage } from './i18n';
 import vuetify from './plugins/vuetify';
 // 外部引用
-import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-import isBetween from 'dayjs/plugin/isBetween';
-dayjs.extend(customParseFormat);
-dayjs.extend(isBetween);
 // 本地引用
 // 內部引用
 import PageBreadcrumbs from '@/components/PageBreadcrumbs.vue';
@@ -55,7 +50,7 @@ Vue.component('TableFilter', TableFilter);
 Vue.component('TableFilterItem', TableFilterItem);
 Vue.prototype.$bus = new Vue();
 
-document.title = '傳真標書報價文件收發系統';
+document.title = 'game-count';
 
 new Vue({
   router,
